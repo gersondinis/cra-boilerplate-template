@@ -10,7 +10,7 @@ Boilerplate with the follow packages:<br/>
 -`material-ui` for theme/components library.
 
 ### Use template:
-`npx create-react-app <project_name> --template cra-template-boilerplate`
+`npx create-react-app <project_name> --template cra-boilerplate-template`
 
 ### Test template:
 `npx create-react-app <project_name> --template file:./`
