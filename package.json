@@ -1,0 +1,23 @@
+{
+    "name": "cra-boilerplate-template",
+    "version": "1.0.1",
+    "keywords": [
+        "react",
+        "create-react-app",
+        "template",
+        "boilerplate",
+        "state-management",
+        "internalization",
+        "routing",
+        "local-storage"
+    ],
+    "description": "The CRA base template.",
+    "license": "MIT",
+    "engines": {
+        "node": ">=10"
+    },
+    "files": [
+        "template",
+        "template.json"
+    ]
+}
