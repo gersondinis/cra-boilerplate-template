@@ -19,5 +19,9 @@
     "files": [
         "template",
         "template.json"
-    ]
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gersondinis/cra-boilerplate-template.git"
+    }
 }

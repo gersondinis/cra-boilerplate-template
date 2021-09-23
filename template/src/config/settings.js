@@ -73,7 +73,8 @@ export const SETTINGS = {
     },
 };
 
-export const httpApiClient = axios.create({
+export const httpClientParse = p => p.then(r => [r?.data, null]).catch(e => [undefined, e]);
+export const httpClientApi = axios.create({
     baseURL: `${SETTINGS.app.API_REST_PROTOCOL}://${SETTINGS.app.API_REST_HOST}:${SETTINGS.app.API_REST_PORT}/api`
 });
 

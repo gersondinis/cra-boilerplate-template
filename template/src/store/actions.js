@@ -1,6 +1,7 @@
 export const actions = {
-    onInitializeOvermind: async () => {
-
+    onInitializeOvermind: async ({effects}) => {
+        const [users, error] = await effects.api.users.get();
+        console.log({users, error, success: !error});
     },
     app: {
         setAppState: ({state}, data) => {

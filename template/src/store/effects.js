@@ -1,7 +1,6 @@
 import {changeLocale} from '../i18n/i18n';
-import {httpApiClient} from '../config/settings';
-
-export const to = p => p.then(result => [result, null]).catch(e => [undefined, e]);
+import {httpClientParse as call} from '../config/settings';
+import {httpClientApi} from '../config/settings';
 
 export const effects = {
     app: {
@@ -9,7 +8,7 @@ export const effects = {
     },
     api: {
         users: {
-            get: () => to(httpApiClient.get('/users')),
+            get: () => call(httpClientApi.get('/users')),
         }
     }
 };
