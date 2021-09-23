@@ -59,7 +59,7 @@ const DevTools = ({showTopBar, onChange, formData, navigateHandler, currentPath,
                         <Box sx={{ flexGrow: 1 }} />
                         <Box sx={{ display: 'flex'}}>
                             <IconButton
-                                size="large"
+                                size="medium"
                                 onClick={e => setMenuAnchorEl(e.currentTarget)}
                             >
                                 <LanguageIcon color={'secondary'}/>

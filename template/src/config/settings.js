@@ -1,4 +1,5 @@
 import store from 'store';
+import axios from 'axios';
 import {
     LOCALES,
     LOCALES_MAP,
@@ -27,10 +28,13 @@ export const APP_MODES = {
     API: 'API'
 };
 
-const SETTINGS = {
+export const SETTINGS = {
     app: {
         NAME: process.env.REACT_APP_NAME,
         API_ENDPOINT: process.env.REACT_APP_API_ENDPOINT,
+        API_REST_PROTOCOL: process.env.REACT_APP_API_REST_PROTOCOL,
+        API_REST_HOST: process.env.REACT_APP_API_REST_HOST,
+        API_REST_PORT: process.env.REACT_APP_API_REST_PORT,
         ENV: process.env.REACT_APP_ENVIRONMENT,
         DEBUG: store.get(DEBUG_KEY) || false,
         INITIAL_MODE: store.get(MODE_KEY) || APP_MODES.API,
@@ -46,7 +50,7 @@ const SETTINGS = {
         LOCALE_KEY,
         LOCALES,
         LOCALES_MAP,
-        LOCALES_TRANSLATIONS: LOCALES_TRANSLATORS,
+        LOCALES_TRANSLATORS,
         LOCALES_DATE_FNS_MAP,
         LOCALE_DETECTED,
         LOCALE_DEFAULT,
@@ -68,5 +72,9 @@ const SETTINGS = {
         PHONE_MOBILE_VALIDATOR,
     },
 };
+
+export const httpApiClient = axios.create({
+    baseURL: `${SETTINGS.app.API_REST_PROTOCOL}://${SETTINGS.app.API_REST_HOST}:${SETTINGS.app.API_REST_PORT}/api`
+});
 
 export default SETTINGS;

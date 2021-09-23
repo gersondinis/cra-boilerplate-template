@@ -7,7 +7,8 @@ Boilerplate with the follow packages:<br/>
 -`overmindjs` for state management;<br />
 -`hookrouter` for routing;<br />
 -`ttag` for internalization;<br />
--`material-ui` for theme/components library.
+-`material-ui` for theme/components library;<br />
+-`axios` for REST.
 
 ### Use template:
 `npx create-react-app <project_name> --template cra-boilerplate-template`
