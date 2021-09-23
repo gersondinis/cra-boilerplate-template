@@ -1,4 +1,4 @@
-# cra-boilerplate-template
+# cra-boilerplate-grd
 
 This is the base template for CRA apps.
 
@@ -11,7 +11,7 @@ Boilerplate with the follow packages:<br/>
 -`axios` for REST.
 
 ### Use template:
-`npx create-react-app <project_name> --template cra-boilerplate-template`
+`npx create-react-app <project_name> --template cra-template-grd`
 
 ### Test template:
 `npx create-react-app <project_name> --template file:./`
