@@ -17,7 +17,8 @@ const Help = () => {
                             -`hookrouter` for routing;<br />
                             -`ttag` for internalization;<br />
                             -`material-ui` for theme/components library;<br />
-                            -`axios` for REST.
+                            -`axios` for REST;<br />
+                            -`storybook` for components building.
                         </Typography>
                     </CardContent>
                 </Fragment>

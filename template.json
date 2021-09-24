@@ -16,6 +16,12 @@
       "ttag": "^1.7.24"
     },
     "devDependencies": {
+      "@storybook/addon-actions": "^6.3.8",
+      "@storybook/addon-essentials": "^6.3.8",
+      "@storybook/addon-links": "^6.3.8",
+      "@storybook/node-logger": "^6.3.8",
+      "@storybook/preset-create-react-app": "^3.2.0",
+      "@storybook/react": "^6.3.8",
       "@types/hookrouter": "^2.2.5",
       "@types/store": "^2.0.2",
       "concurrently": "^6.2.1",
@@ -33,11 +39,23 @@
       "eject": "react-scripts eject",
       "debug": "concurrently \"yarn start\" overmind-devtools",
       "i18n-compile": "yarn ttag update src/i18n/translations/pt.po src/ && npx ttag update src/i18n/translations/en.po src/ && npx ttag po2json src/i18n/translations/pt.po > src/i18n/translations/pt.po.json && npx ttag po2json src/i18n/translations/en.po > src/i18n/translations/en.po.json",
-      "i18n-init": "yarn ttag init en src/i18n/translations/en.po && npx ttag init pt src/i18n/translations/pt.po"
+      "i18n-init": "yarn ttag init en src/i18n/translations/en.po && npx ttag init pt src/i18n/translations/pt.po",
+      "storybook": "start-storybook -p 6006 -s public",
+      "build-storybook": "build-storybook -s public"
     },
     "eslintConfig": {
       "extends": [
         "react-app"
+      ],
+      "overrides": [
+        {
+          "files": [
+            "**/*.stories.*"
+          ],
+          "rules": {
+            "import/no-anonymous-default-export": "off"
+          }
+        }
       ]
     },
     "browserslist": {
