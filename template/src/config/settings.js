@@ -31,7 +31,7 @@ export const APP_MODES = {
 export const SETTINGS = {
     app: {
         NAME: process.env.REACT_APP_NAME,
-        API_ENDPOINT: process.env.REACT_APP_API_ENDPOINT,
+        API_REST_ENDPOINT: `${process.env.REACT_APP_API_REST_PROTOCOL}://${process.env.REACT_APP_API_REST_HOST}:${process.env.REACT_APP_API_REST_PORT}`,
         API_REST_PROTOCOL: process.env.REACT_APP_API_REST_PROTOCOL,
         API_REST_HOST: process.env.REACT_APP_API_REST_HOST,
         API_REST_PORT: process.env.REACT_APP_API_REST_PORT,
@@ -75,7 +75,7 @@ export const SETTINGS = {
 
 export const httpClientParse = p => p.then(r => [r?.data, null]).catch(e => [undefined, e]);
 export const httpClientApi = axios.create({
-    baseURL: `${SETTINGS.app.API_REST_PROTOCOL}://${SETTINGS.app.API_REST_HOST}:${SETTINGS.app.API_REST_PORT}/api`
+    baseURL: `${SETTINGS.app.API_REST_ENDPOINT}/api`
 });
 
 export default SETTINGS;
