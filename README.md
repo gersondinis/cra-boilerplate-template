@@ -9,6 +9,7 @@ Boilerplate with the follow packages:<br/>
 -`ttag` for internalization;<br />
 -`material-ui` for theme/components library;<br />
 -`axios` for REST;<br />
+-`react-hook-form` for Forms validation;<br />
 -`storybook` for components building.
 
 ### Use template:

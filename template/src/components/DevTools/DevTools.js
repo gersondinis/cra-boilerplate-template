@@ -28,6 +28,7 @@ import CloudIcon from '@material-ui/icons/Cloud';
 import CloudOffIcon from '@material-ui/icons/CloudOff';
 import LanguageIcon from '@material-ui/icons/Language';
 import BuildIcon from '@material-ui/icons/Build';
+import AllInclusiveIcon from '@material-ui/icons/AllInclusive';
 // import CropFreeIcon from '@material-ui/icons/CropFree';
 // import QrReader from "../QrReader/QrReader";
 import APP_SETTINGS from "../../config/settings";
@@ -161,6 +162,20 @@ const DevTools = ({showTopBar, onChange, formData, navigateHandler, currentPath,
                             <ListItemSecondaryAction>
                                 <IconButton onClick={() => {
                                     navigateHandler('/');
+                                    onChange({open: false});
+                                }}>
+                                    <KeyboardArrowRightIcon/>
+                                </IconButton>
+                            </ListItemSecondaryAction>
+                        </ListItem>
+                        <ListItem>
+                            <ListItemIcon>
+                                <AllInclusiveIcon/>
+                            </ListItemIcon>
+                            <ListItemText primary={'Examples'}/>
+                            <ListItemSecondaryAction>
+                                <IconButton onClick={() => {
+                                    navigateHandler('/examples');
                                     onChange({open: false});
                                 }}>
                                     <KeyboardArrowRightIcon/>
