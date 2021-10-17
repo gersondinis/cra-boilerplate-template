@@ -1,0 +1,4 @@
+.idea/
+template/node_modules/
+template/package.json
+template/yarn.lock
