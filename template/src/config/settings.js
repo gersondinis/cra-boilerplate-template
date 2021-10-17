@@ -13,7 +13,6 @@ import {
   LOCALES_TRANSLATORS,
   translate as t
 } from '../i18n/i18n';
-import {EMAIL_VALIDATOR, PHONE_MOBILE_VALIDATOR, PHONE_VALIDATOR, URL_VALIDATOR} from './validators/validators';
 
 export const DATE_FORMAT = 'YYYY-MM-DD';
 export const DATE_TIME_FORMAT = 'YYYY-MM-DD HH:mm:ss';
@@ -64,13 +63,7 @@ export const SETTINGS = {
     DATE_TIME_FORMAT,
     DATE_TIME_FORMAT_NO_SEC,
     DATE_TIME_FORMAT_COMPATIBLE,
-  },
-  VALIDATORS: {
-    EMAIL_VALIDATOR,
-    URL_VALIDATOR,
-    PHONE_VALIDATOR,
-    PHONE_MOBILE_VALIDATOR,
-  },
+  }
 };
 
 export const httpClientParse = p => p.then(r => [r?.data, null]).catch(e => [undefined, e]);
