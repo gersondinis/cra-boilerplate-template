@@ -3,7 +3,7 @@ import {Box, Button, Grid, TextField} from '@mui/material';
 import {Controller, useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import schema from './FormExampleSchemaValidation';
-import Loading from '../common/Loading/Loading';
+import LoadingScreen from '../common/LoadingScreen/LoadingScreen';
 
 const FormExample = () => {
   const {control, handleSubmit, formState: {errors, isSubmitting}} = useForm({
@@ -12,7 +12,7 @@ const FormExample = () => {
 
   return (
     <Box maxWidth={'xs'}>
-      <Loading loading={isSubmitting}/>
+      <LoadingScreen loading={isSubmitting}/>
       <Grid spacing={2} container>
         <Grid xs={6} item>
           <Controller
