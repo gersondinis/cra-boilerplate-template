@@ -1,14 +1,9 @@
 import React from 'react';
-import {Box, useTheme} from '@mui/material';
+import {Box} from '@mui/material';
 import Router from './router/Router';
 import DevTools from './components/DevTools/DevToolsConnected';
 
 function App() {
-
-  const theme = useTheme();
-
-  debugger;
-
   return (
     <Box>
       <DevTools/>
