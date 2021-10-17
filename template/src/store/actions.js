@@ -1,7 +1,6 @@
 export const actions = {
-  onInitializeOvermind: async ({effects}) => {
-    const [users, error] = await effects.api.users.get();
-    console.log({users, error, success: !error});
+  onInitializeOvermind: async () => {
+    console.info('State management initialized.');
   },
   app: {
     setAppState: ({state}, data) => {
