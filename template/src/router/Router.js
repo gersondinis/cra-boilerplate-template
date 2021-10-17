@@ -5,12 +5,12 @@ import ExamplesPage from '../scenes/ExamplesPage';
 
 export const Router = () => {
 
-    const routes = {
-        '/': () => <HelpPage/>,
-        '/examples': () => <ExamplesPage/>,
-    };
+  const routes = {
+    '/': () => <HelpPage/>,
+    '/examples': () => <ExamplesPage/>,
+  };
 
-    return useRoutes(routes) || <PageNotFound/>;
+  return useRoutes(routes) || <PageNotFound/>;
 };
 
 export default Router;

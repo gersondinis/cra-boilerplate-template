@@ -6,9 +6,9 @@ import actions from './actions';
 import effects from './effects';
 
 export default createStore({
-    state,
-    actions,
-    effects
+  state,
+  actions,
+  effects
 });
 
 export const useAppState = createStateHook()

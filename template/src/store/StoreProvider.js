@@ -4,11 +4,11 @@ import store from './store';
 
 
 const StoreProvider = ({children}) => {
-    return (
-        <Provider value={store}>
-            {children}
-        </Provider>
-    );
+  return (
+    <Provider value={store}>
+      {children}
+    </Provider>
+  );
 };
 
 export default StoreProvider;

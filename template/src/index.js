@@ -8,12 +8,12 @@ import App from './App';
 
 
 ReactDOM.render(
-    <ThemeProvider>
-        <StoreProvider>
-            <I18nProvider>
-                <App/>
-            </I18nProvider>
-        </StoreProvider>
-    </ThemeProvider>,
-    document.getElementById('root')
+  <ThemeProvider>
+    <StoreProvider>
+      <I18nProvider>
+        <App/>
+      </I18nProvider>
+    </StoreProvider>
+  </ThemeProvider>,
+  document.getElementById('root')
 );

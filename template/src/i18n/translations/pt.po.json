@@ -1,1 +1,56 @@
-{"charset":"utf-8","headers":{"content-type":"text/plain; charset=utf-8","plural-forms":"nplurals = 2; plural = (n != 1);","language":"pt","mime-version":"1.0","content-transfer-encoding":"8bit","project-id-version":"","pot-creation-date":"","po-revision-date":"","last-translator":"","language-team":"","x-generator":"Poedit 2.3"},"translations":{"":{"":{"msgid":"","msgstr":["Content-Type: text/plain; charset=utf-8\nPlural-Forms: nplurals = 2; plural = (n != 1);\nLanguage: pt\nmime-version: 1.0\nContent-Transfer-Encoding: 8bit\nProject-Id-Version: \nPOT-Creation-Date: \nPO-Revision-Date: \nLast-Translator: \nLanguage-Team: \nx-generator: Poedit 2.3\n"]},"BrandNewTranslation":{"msgid":"BrandNewTranslation","msgstr":[""]},"Hi there!":{"msgid":"Hi there!","msgstr":["Olá mundo!"]},"EN":{"msgid":"EN","msgstr":[""]},"PT":{"msgid":"PT","msgstr":[""]},"FR":{"msgid":"FR","msgstr":[""]}}}}
+{
+  "charset": "utf-8",
+  "headers": {
+    "content-type": "text/plain; charset=utf-8",
+    "plural-forms": "nplurals = 2; plural = (n != 1);",
+    "language": "pt",
+    "mime-version": "1.0",
+    "content-transfer-encoding": "8bit",
+    "project-id-version": "",
+    "pot-creation-date": "",
+    "po-revision-date": "",
+    "last-translator": "",
+    "language-team": "",
+    "x-generator": "Poedit 2.3"
+  },
+  "translations": {
+    "": {
+      "": {
+        "msgid": "",
+        "msgstr": [
+          "Content-Type: text/plain; charset=utf-8\nPlural-Forms: nplurals = 2; plural = (n != 1);\nLanguage: pt\nmime-version: 1.0\nContent-Transfer-Encoding: 8bit\nProject-Id-Version: \nPOT-Creation-Date: \nPO-Revision-Date: \nLast-Translator: \nLanguage-Team: \nx-generator: Poedit 2.3\n"
+        ]
+      },
+      "BrandNewTranslation": {
+        "msgid": "BrandNewTranslation",
+        "msgstr": [
+          ""
+        ]
+      },
+      "Hi there!": {
+        "msgid": "Hi there!",
+        "msgstr": [
+          "Olá mundo!"
+        ]
+      },
+      "EN": {
+        "msgid": "EN",
+        "msgstr": [
+          ""
+        ]
+      },
+      "PT": {
+        "msgid": "PT",
+        "msgstr": [
+          ""
+        ]
+      },
+      "FR": {
+        "msgid": "FR",
+        "msgstr": [
+          ""
+        ]
+      }
+    }
+  }
+}

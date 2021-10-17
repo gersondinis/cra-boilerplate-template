@@ -12,9 +12,9 @@ $text-disable: rgb(185, 185, 185);
 $filled-gray: #fafafa;
 $disabled-gray: #0000001F;
 $outline: rgba(137, 137, 137, 1);
-$disabled-outline: lighten( $disabled-gray, 25% );
+$disabled-outline: lighten($disabled-gray, 25%);
 
 // Fonts
-$neo-sans-bold: NeoSansBold, -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-$neo-sans-regular: NeoSansRegular, -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-$neo-sans-medium: NeoSansMedium, -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+$neo-sans-bold: NeoSansBold, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$neo-sans-regular: NeoSansRegular, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$neo-sans-medium: NeoSansMedium, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
