@@ -7,7 +7,8 @@ Boilerplate with the follow packages:<br/>
 -`overmindjs` for state management;<br />
 -`hookrouter` for routing;<br />
 -`ttag` for internalization;<br />
--`material-ui` for theme/components library;<br />
+-`material-ui v5` for theme/components library;<br />
+-`notistack` for notification alerts;<br />
 -`axios` for REST;<br />
 -`react-hook-form` for Forms validation;<br />
 -`storybook` for components building.

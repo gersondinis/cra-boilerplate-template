@@ -5,14 +5,17 @@ import ThemeProvider from './theme/ThemeProvider';
 import StoreProvider from './store/StoreProvider';
 import I18nProvider from './i18n/I18nProvider';
 import App from './App';
+import SnackbarProvider from './utils/providers/SnackbarProvider';
 
 
 ReactDOM.render(
   <ThemeProvider>
     <StoreProvider>
-      <I18nProvider>
-        <App/>
-      </I18nProvider>
+      <SnackbarProvider>
+        <I18nProvider>
+          <App/>
+        </I18nProvider>
+      </SnackbarProvider>
     </StoreProvider>
   </ThemeProvider>,
   document.getElementById('root')
