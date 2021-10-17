@@ -1,2 +1,4 @@
 
 .idea/
+template/node_modules/
+template/yarn.lock

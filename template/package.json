@@ -1,0 +1,105 @@
+{
+    "name": "cra-template-grd",
+    "version": "1.0.11",
+    "keywords": [
+        "react",
+        "create-react-app",
+        "template",
+        "boilerplate",
+        "state-management",
+        "internalization",
+        "routing",
+        "local-storage"
+    ],
+    "description": "The CRA base template.",
+    "license": "MIT",
+    "engines": {
+        "node": ">=10"
+    },
+    "files": [
+        "template",
+        "template.json"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gersondinis/cra-boilerplate-template.git"
+    },
+    "dependencies": {
+        "@grd/debouncer": "^1.0.2",
+        "@hookform/resolvers": "^2.8.1",
+        "@material-ui/core": "^4.12.3",
+        "@material-ui/icons": "^4.11.2",
+        "axios": "^0.21.4",
+        "date-fns": "^2.23.0",
+        "hookrouter": "^1.2.5",
+        "overmind": "^28.0.1",
+        "overmind-react": "^29.0.1",
+        "prop-types": "^15.7.2",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-hook-form": "^7.16.2",
+        "react-scripts": "4.0.3",
+        "store": "^2.0.12",
+        "ttag": "^1.7.24",
+        "yup": "^0.32.9"
+    },
+    "devDependencies": {
+        "@storybook/addon-actions": "^6.3.8",
+        "@storybook/addon-essentials": "^6.3.8",
+        "@storybook/addon-links": "^6.3.8",
+        "@storybook/node-logger": "^6.3.8",
+        "@storybook/preset-create-react-app": "^3.2.0",
+        "@storybook/react": "^6.3.8",
+        "@types/hookrouter": "^2.2.5",
+        "@types/store": "^2.0.2",
+        "concurrently": "^6.2.1",
+        "env-cmd": "^10.1.0",
+        "node-sass": "^6.0.1",
+        "overmind-devtools": "^29.0.1",
+        "ttag-cli": "^1.9.3"
+    },
+    "resolutions": {
+        "babel-loader": "8.1.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "build-local": "env-cmd -f .env.development.local yarn build",
+        "build-dev": "env-cmd -f .env.development yarn build",
+        "build-prod": "env-cmd -f .env.production yarn build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "debug": "concurrently \"yarn start\" overmind-devtools",
+        "i18n-compile": "yarn ttag update src/i18n/translations/pt.po src/ && npx ttag update src/i18n/translations/en.po src/ && npx ttag po2json src/i18n/translations/pt.po > src/i18n/translations/pt.po.json && npx ttag po2json src/i18n/translations/en.po > src/i18n/translations/en.po.json",
+        "i18n-init": "yarn ttag init en src/i18n/translations/en.po && npx ttag init pt src/i18n/translations/pt.po",
+        "storybook": "start-storybook -p 6006 -s public",
+        "build-storybook": "build-storybook -s public"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app"
+        ],
+        "overrides": [
+            {
+                "files": [
+                    "**/*.stories.*"
+                ],
+                "rules": {
+                    "import/no-anonymous-default-export": "off"
+                }
+            }
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
