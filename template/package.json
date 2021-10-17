@@ -36,6 +36,7 @@
         "axios": "^0.21.4",
         "date-fns": "^2.23.0",
         "hookrouter": "^1.2.5",
+        "node-sass": "^6.0.1",
         "notistack": "^2.0.2",
         "overmind": "^28.0.1",
         "overmind-react": "^29.0.1",
