@@ -13,10 +13,21 @@ Boilerplate with the follow packages:<br/>
 -`storybook` for components building.
 
 ### Use template:
-`npx create-react-app <project_name> --template cra-template-grd`
+```bash 
+npx create-react-app <project_name> --template cra-template-grd
+```
 
 ### Test template:
-`npx create-react-app <project_name> --template file:./`
+```bash
+npx create-react-app <project_name> --template file:./
+```
+
+### Run template:
+```bash
+cd template && yarn install && yarn start
+```
 
 ### Publish template:
-`yarn publish`
+```bash
+yarn publish
+```
