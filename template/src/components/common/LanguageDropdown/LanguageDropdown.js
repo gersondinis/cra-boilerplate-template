@@ -4,7 +4,7 @@ import {FormControl, InputLabel, MenuItem, Select} from '@mui/material';
 import {t} from 'ttag';
 
 
-const LanguageDropdown = ({label, value, onChange, error, isOnDark, variant}) => {
+const LanguageDropdown = ({label, value, onChange, error, variant}) => {
 
   return (
     <FormControl fullWidth error={error} variant={variant}>
@@ -26,7 +26,6 @@ LanguageDropdown.propTypes = {
   onSelect: PropTypes.func,
   required: PropTypes.bool,
   variant: PropTypes.string,
-  isOnDark: PropTypes.bool,
 };
 
 LanguageDropdown.defaultProps = {
@@ -36,7 +35,6 @@ LanguageDropdown.defaultProps = {
   onChange: () => console.warn('function not injected'),
   required: false,
   variant: 'standard',
-  isOnDark: false,
 };
 
 export default LanguageDropdown;
