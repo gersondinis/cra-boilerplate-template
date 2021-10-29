@@ -1,10 +1,11 @@
 import * as Yup from 'yup';
-import {debounce} from '@grd/debouncer';
+// import {debounce} from '@grd/debouncer';
 
 
 export const schema = Yup.object({
   firstName: Yup
-    .string()
+    .string().required(),
+    /*//Very complex async validation
     .test(async (v, context) => { //This works as a chain workaround.
       try {
         await Yup.string().min(3, 'Min 3 chars msg').max(5, 'Max 5 chars msg').validate(v);
@@ -16,14 +17,22 @@ export const schema = Yup.object({
           }
         });
         await new Promise((resolve, reject) => debounce(() => {
-          reject(Error('Debounced promise error msg'))
+          if (v === 'sync') {
+            reject(Error('Debounced promise error msg'))
+          }
+          resolve(true);
         }, 2000));
       } catch ({message}) {
         return context.createError({message});
       }
       return true;
-    }),
+    }),*/
   lastName: Yup.string().required(),
+  withEmail: Yup.bool(),
+  email: Yup.string().when('withEmail', {
+    is: true, // alternatively: (val) => val == true
+    then: Yup.string().required()
+  })
 }).required();
 
 export default schema;
