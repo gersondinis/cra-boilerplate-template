@@ -7,7 +7,12 @@ export const ApiExample = () => {
 
   return (
     <div>
-      <QueryFeedback error={error} isSuccess={createTodoMutation.isSuccess} isLoading={isLoading || createTodoMutation.isLoading} isError={isError}/>
+      <QueryFeedback
+        error={error}
+        isSuccess={createTodoMutation.isSuccess}
+        isError={isError}
+        isLoading={isLoading || createTodoMutation.isLoading}
+      />
       <ul>
         {data?.slice(-5).map(todo => (
           <li key={todo.id}>{todo.title}</li>
