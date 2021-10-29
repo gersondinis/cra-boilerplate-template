@@ -13,11 +13,11 @@ ReactDOM.render(
   <ThemeProvider>
     <StoreProvider>
       <SnackbarProvider>
-        <I18nProvider>
-          <ApiProvider>
+        <ApiProvider>
+          <I18nProvider>
             <App/>
-          </ApiProvider>
-        </I18nProvider>
+          </I18nProvider>
+        </ApiProvider>
       </SnackbarProvider>
     </StoreProvider>
   </ThemeProvider>,
