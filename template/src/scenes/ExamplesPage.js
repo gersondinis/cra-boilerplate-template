@@ -3,6 +3,7 @@ import FormExample from '../components/FormExample/FormExample';
 import {Grid, IconButton} from '@mui/material';
 import {ArrowBack} from '@mui/icons-material';
 import {navigate} from 'hookrouter';
+import {ApiExample} from '../api/ApiExample';
 
 
 const ExamplesPage = () => {
@@ -13,6 +14,9 @@ const ExamplesPage = () => {
       </Grid>
       <Grid xs={12} item>
         <FormExample/>
+      </Grid>
+      <Grid xs={12} item>
+        <ApiExample/>
       </Grid>
     </Grid>
   );

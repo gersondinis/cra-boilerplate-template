@@ -18,6 +18,8 @@ const Help = () => {
               -`ttag` for internalization;<br/>
               -`material-ui` for theme/components library;<br/>
               -`axios` for REST;<br/>
+              -`react-hook-form` for Forms validation;<br />
+              -`react-query` for Fetching and Caching;<br />
               -`storybook` for components building.
             </Typography>
           </CardContent>
