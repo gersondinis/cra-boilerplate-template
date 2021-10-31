@@ -28,7 +28,7 @@ jobs:
         run: cd template/ && npm install
 
       - name: Build
-        run: cd template/ && npm run build-dev
+        run: cd template/ && npm run build-dev 
 
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
