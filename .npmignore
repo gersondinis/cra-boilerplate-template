@@ -5,4 +5,5 @@
 firebase.json
 template/node_modules/
 template/package.json
+template/build/
 template/yarn.lock
