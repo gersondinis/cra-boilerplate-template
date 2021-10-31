@@ -28,7 +28,7 @@ jobs:
         run: cd template/ && yarn
 
       - name: Build
-        run: cd template/ && yarn build-prod
+        run: cd template/ && yarn build-dev
 
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
