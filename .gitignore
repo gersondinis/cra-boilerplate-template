@@ -3,7 +3,6 @@
 template/node_modules/
 template/yarn.lock
 template/build/
-template/.firebase/
 
 # Logs
 logs

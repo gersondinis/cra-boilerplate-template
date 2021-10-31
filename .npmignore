@@ -1,8 +1,8 @@
 .idea/
 .github/
-template/.firebase/
+.firebase/
+.firebaserc
+firebase.json
 template/node_modules/
 template/package.json
 template/yarn.lock
-template/.firebaserc
-template/firebase.json
