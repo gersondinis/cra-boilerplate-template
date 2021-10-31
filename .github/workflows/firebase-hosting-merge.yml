@@ -17,7 +17,7 @@ jobs:
           cache-name: cache-node-modules
         with:
           # npm cache files are stored in `~/.npm` on Linux/macOS
-          path: ~/.yarn
+          path: ~/.npm
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
@@ -25,10 +25,10 @@ jobs:
             ${{ runner.os }}-
 
       - name: Install Dependencies
-        run: cd template/ && yarn
+        run: cd template/ && npm install
 
       - name: Build
-        run: cd template/ && yarn build-dev
+        run: cd template/ && npm run build-dev
 
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
