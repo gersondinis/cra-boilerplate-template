@@ -1,5 +1,11 @@
 import {useState} from 'react';
 
+/**
+ * Hook to handle a promise callable on a React way. [JSDoc]
+ *
+ * @param {function(...args: any[]): Promise} promise
+ * @returns {[invoke: any, {result: null, isLoading: boolean, error: null}]}
+ */
 const usePromise = (promise) => {
   const [promiseFeedback, setPromiseFeedback] = useState({result: null, error: null, isLoading: false})
 
