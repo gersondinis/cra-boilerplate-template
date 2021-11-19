@@ -4,11 +4,12 @@ import {Grid, IconButton} from '@mui/material';
 import {ArrowBack} from '@mui/icons-material';
 import {navigate} from 'hookrouter';
 import {ApiExample} from '../api/ApiExample';
+import ValtioExample from './ValtioExample';
 
 
 const ExamplesPage = () => {
   return (
-    <Grid container>
+    <Grid spacing={3} container>
       <Grid xs={12} item>
         <IconButton onClick={() => navigate('/')} size="large"><ArrowBack/></IconButton>
       </Grid>
@@ -17,6 +18,9 @@ const ExamplesPage = () => {
       </Grid>
       <Grid xs={12} item>
         <ApiExample/>
+      </Grid>
+      <Grid xs={12} item>
+        <ValtioExample/>
       </Grid>
     </Grid>
   );

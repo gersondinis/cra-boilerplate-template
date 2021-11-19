@@ -48,6 +48,7 @@
         "react-scripts": "4.0.3",
         "store": "^2.0.12",
         "ttag": "^1.7.24",
+        "valtio": "^1.2.6",
         "yup": "^0.32.9"
     },
     "devDependencies": {
