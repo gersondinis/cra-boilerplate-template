@@ -4,8 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Boilerplate with the follow packages:<br/>
 -`store` for cross-browser local storage;<br />
--`overmindjs` for state management;<br />
--`valtio` for state management (beta);<br/>
+-`valtio` for state management;<br/>
 -`hookrouter` for routing;<br />
 -`ttag` for internalization;<br />
 -`material-ui v5` for theme/components library;<br />

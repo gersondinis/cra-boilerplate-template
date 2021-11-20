@@ -38,8 +38,6 @@
         "hookrouter": "^1.2.5",
         "node-sass": "^6.0.1",
         "notistack": "^2.0.2",
-        "overmind": "^28.0.1",
-        "overmind-react": "^29.0.1",
         "prop-types": "^15.7.2",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",

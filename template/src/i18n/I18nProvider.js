@@ -1,10 +1,10 @@
 import './i18n';
 import {Children, cloneElement, isValidElement} from 'react';
-import {useAppState} from '../store/store';
+import {useStore} from '../store';
 
 export const I18nProvider = ({children}) => {
 
-  const {app: {language}} = useAppState();
+  const {app: {language}} = useStore();
 
   return Children.map(children, child => isValidElement(child) ? cloneElement(child, {language}) : child);
 }

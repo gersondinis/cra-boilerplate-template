@@ -2,7 +2,6 @@ import React from 'react';
 import {Box} from '@mui/material';
 import {proxy, subscribe, useSnapshot} from 'valtio';
 import {subscribeKey} from 'valtio/utils';
-let rerenders = 0;
 
 export const state = proxy({
   app: {
@@ -16,17 +15,28 @@ subscribe(state.app, () => console.log('subscribe', state.app.countA));
 subscribeKey(state.app, 'countB', () => console.log('subscribeKey', state.app.countB));
 
 const ValtioExample = () => {
-  const {app: {countA}} = useSnapshot(state);
+  const {app: {countA, countB}} = useSnapshot(state);
   return (
-    <Box sx={styles.container}>
-      <button onClick={() => --state.app.countA}>dec</button>
-      <Box sx={styles.counter}>
-        {countA}
+    <>
+      CountA
+      <Box sx={styles.container}>
+        <button onClick={() => --state.app.countA}>dec</button>
+        <Box sx={styles.counter}>
+          {countA}
+        </Box>
+        <button onClick={() => ++state.app.countA}>INC</button>
       </Box>
-      <button onClick={() => ++state.app.countA}>INC</button>
-      <button onClick={() => ++state.app.countB}>INC</button>
-      ({++rerenders} re-renders)
-    </Box>
+      CountB
+      <Box sx={styles.container}>
+        <button onClick={() => --state.app.countB}>dec</button>
+        <Box sx={styles.counter}>
+          {countB}
+        </Box>
+        <button onClick={() => ++state.app.countB}>INC</button>
+      </Box>
+
+    </>
+
   );
 };
 
@@ -35,6 +45,7 @@ const styles = {
     display: 'flex'
   },
   counter: {
+    display: 'flex',
     fontSize: '40px',
     padding: 1
   }

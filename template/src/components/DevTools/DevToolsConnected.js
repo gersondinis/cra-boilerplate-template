@@ -1,12 +1,12 @@
 import React from 'react';
 import DevTools from './DevTools';
 import {navigate} from 'hookrouter';
-import {useActions, useAppState} from '../../store/store';
+import {useStore, actions} from '../../store';
 
 const DevToolsConnected = () => {
 
-  const {app: {language, devTools: formData}} = useAppState();
-  const {app: {setLanguage, setAppDevToolsState}} = useActions();
+  const {app: {language, devTools: formData}} = useStore();
+  const {app: {setLanguage, setAppDevToolsState}} = actions;
 
   return (
     <DevTools

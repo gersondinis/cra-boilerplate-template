@@ -1,17 +1,6 @@
-import {createOvermind as createStore} from 'overmind';
-import {createActionsHook, createEffectsHook, createReactionHook, createStateHook} from 'overmind-react';
-
+import {proxy, useSnapshot} from 'valtio';
 import state from './state';
-import actions from './actions';
-import effects from './effects';
 
-export default createStore({
-  state,
-  actions,
-  effects
-});
-
-export const useAppState = createStateHook();
-export const useActions = createActionsHook();
-export const useEffects = createEffectsHook();
-export const useReaction = createReactionHook();
+export const store = proxy(state);
+export const useStore = () => useSnapshot(store);
+export default store;

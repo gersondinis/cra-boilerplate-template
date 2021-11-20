@@ -4,7 +4,7 @@ import {Grid, IconButton} from '@mui/material';
 import {ArrowBack} from '@mui/icons-material';
 import {navigate} from 'hookrouter';
 import {ApiExample} from '../api/ApiExample';
-import ValtioExample from './ValtioExample';
+import ValtioExample from '../components/ValtioExample/ValtioExample';
 
 
 const ExamplesPage = () => {

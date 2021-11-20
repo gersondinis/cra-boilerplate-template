@@ -6,6 +6,10 @@ export const state = {
     language: LOCALE_DEFAULT,
     loading: false,
     notifications: [],
+    user: {
+      roles: [],
+    },
+    count: 0,
     devTools: {
       open: false,
       mode: SETTINGS.app.INITIAL_MODE,
