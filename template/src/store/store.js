@@ -1,6 +1,6 @@
 import {proxy, useSnapshot} from 'valtio';
-import state from './state';
+import initialState from './initialState';
 
-export const store = proxy(state);
+export const store = proxy(initialState);
 export const useStore = () => useSnapshot(store);
 export default store;

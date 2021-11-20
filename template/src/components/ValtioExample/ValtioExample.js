@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box} from '@mui/material';
+import {Box, Card, CardContent, CardHeader} from '@mui/material';
 import {proxy, subscribe, useSnapshot} from 'valtio';
 import {subscribeKey} from 'valtio/utils';
 
@@ -17,26 +17,27 @@ subscribeKey(state.app, 'countB', () => console.log('subscribeKey', state.app.co
 const ValtioExample = () => {
   const {app: {countA, countB}} = useSnapshot(state);
   return (
-    <>
-      CountA
-      <Box sx={styles.container}>
-        <button onClick={() => --state.app.countA}>dec</button>
-        <Box sx={styles.counter}>
-          {countA}
+    <Card raised>
+      <CardHeader title={'valtio'} subheader={'state management'}/>
+      <CardContent>
+        CountA
+        <Box sx={styles.container}>
+          <button onClick={() => --state.app.countA}>dec</button>
+          <Box sx={styles.counter}>
+            {countA}
+          </Box>
+          <button onClick={() => ++state.app.countA}>INC</button>
         </Box>
-        <button onClick={() => ++state.app.countA}>INC</button>
-      </Box>
-      CountB
-      <Box sx={styles.container}>
-        <button onClick={() => --state.app.countB}>dec</button>
-        <Box sx={styles.counter}>
-          {countB}
+        CountB
+        <Box sx={styles.container}>
+          <button onClick={() => --state.app.countB}>dec</button>
+          <Box sx={styles.counter}>
+            {countB}
+          </Box>
+          <button onClick={() => ++state.app.countB}>INC</button>
         </Box>
-        <button onClick={() => ++state.app.countB}>INC</button>
-      </Box>
-
-    </>
-
+      </CardContent>
+    </Card>
   );
 };
 

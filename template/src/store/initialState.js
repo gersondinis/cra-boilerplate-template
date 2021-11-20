@@ -1,7 +1,7 @@
 import {LOCALE_DEFAULT} from '../i18n/i18n';
 import SETTINGS from '../config/settings';
 
-export const state = {
+export const initialState = {
   app: {
     language: LOCALE_DEFAULT,
     loading: false,
@@ -9,13 +9,13 @@ export const state = {
     user: {
       roles: [],
     },
-    count: 0,
     devTools: {
       open: false,
       mode: SETTINGS.app.INITIAL_MODE,
       debug: SETTINGS.app.DEBUG,
     }
   },
+  count: 0,
 };
 
-export default state;
+export default initialState;

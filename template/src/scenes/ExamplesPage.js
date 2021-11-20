@@ -1,9 +1,9 @@
 import React from 'react';
-import FormExample from '../components/FormExample/FormExample';
+import ReactHookFormExample from '../components/ReactHookFormExample/ReactHookFormExample';
 import {Grid, IconButton} from '@mui/material';
 import {ArrowBack} from '@mui/icons-material';
 import {navigate} from 'hookrouter';
-import {ApiExample} from '../api/ApiExample';
+import {ReactQueryExample} from '../components/ReactQueryExample/ReactQueryExample';
 import ValtioExample from '../components/ValtioExample/ValtioExample';
 
 
@@ -13,13 +13,13 @@ const ExamplesPage = () => {
       <Grid xs={12} item>
         <IconButton onClick={() => navigate('/')} size="large"><ArrowBack/></IconButton>
       </Grid>
-      <Grid xs={12} item>
-        <FormExample/>
+      <Grid xs={12} md={6} xl={4} item>
+        <ReactHookFormExample/>
       </Grid>
-      <Grid xs={12} item>
-        <ApiExample/>
+      <Grid xs={12} md={6} xl={4} item>
+        <ReactQueryExample/>
       </Grid>
-      <Grid xs={12} item>
+      <Grid xs={12} md={6} xl={4} item>
         <ValtioExample/>
       </Grid>
     </Grid>
