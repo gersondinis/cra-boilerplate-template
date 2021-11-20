@@ -1,5 +1,6 @@
 import React from 'react';
-import {Box, Card, CardContent, CardHeader} from '@mui/material';
+import {Box, Card, CardContent, CardHeader, IconButton} from '@mui/material';
+import {Add, Remove} from '@mui/icons-material';
 import {proxy, subscribe, useSnapshot} from 'valtio';
 import {subscribeKey} from 'valtio/utils';
 
@@ -22,19 +23,19 @@ const ValtioExample = () => {
       <CardContent>
         CountA
         <Box sx={styles.container}>
-          <button onClick={() => --state.app.countA}>dec</button>
+          <IconButton onClick={() => --state.app.countA}><Remove/></IconButton>
           <Box sx={styles.counter}>
             {countA}
           </Box>
-          <button onClick={() => ++state.app.countA}>INC</button>
+          <IconButton onClick={() => ++state.app.countA}><Add/></IconButton>
         </Box>
         CountB
         <Box sx={styles.container}>
-          <button onClick={() => --state.app.countB}>dec</button>
+          <IconButton onClick={() => --state.app.countB}><Remove/></IconButton>
           <Box sx={styles.counter}>
             {countB}
           </Box>
-          <button onClick={() => ++state.app.countB}>INC</button>
+          <IconButton onClick={() => ++state.app.countB}><Add/></IconButton>
         </Box>
       </CardContent>
     </Card>

@@ -3,59 +3,57 @@ import {Box, Button, Card, CardContent, CardHeader, FormControlLabel, Grid, Swit
 import {Controller, useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import schema from './SchemaValidation';
-import LoadingScreen from '../common/LoadingScreen/LoadingScreen';
+import LoadingFeedback from './LoadingFeedback';
+import EmailField from './EmailField';
 
+let rerenders = 0;
 const ReactHookFormExample = () => {
-  const {control, handleSubmit, watch, formState: {errors, isSubmitting}} = useForm({
+  const {control, handleSubmit} = useForm({
     resolver: yupResolver(schema)
   });
 
-  const withEmail = watch('withEmail');
-
   return (
     <Card raised>
-      <CardHeader title={'react-hook-form example'} subheader={'forms'}/>
+      <CardHeader title={'react-hook-form example'} subheader={`forms (${++rerenders})`}/>
       <CardContent>
         <Box maxWidth={'xs'}>
-          react-hook-form example
-          <LoadingScreen loading={isSubmitting}/>
+          <LoadingFeedback control={control}/>
           <Grid spacing={2} container>
-            <Grid xs={6} item>
+            <Grid xs={12} lg={6} item>
               <Controller
                 name={'firstName'}
                 control={control}
                 defaultValue={''}
-                render={({field}) => (
+                render={({field, fieldState: {error}}) => (
                   <TextField
                     {...field}
                     label={'First name'}
                     variant={'outlined'}
-                    error={Boolean(errors?.firstName)}
-                    helperText={errors?.firstName?.message}
+                    error={Boolean(error)}
+                    helperText={error?.message}
                     fullWidth
                   />
                 )}
               />
             </Grid>
-            <Grid xs={6} item>
+            <Grid xs={12} lg={6} item>
               <Controller
                 name={'lastName'}
                 control={control}
                 defaultValue={''}
-                render={({field}) => (
+                render={({field, fieldState: {error}}) => (
                   <TextField
                     {...field}
                     label={'Last name'}
                     variant={'outlined'}
-                    error={Boolean(errors?.lastName)}
-                    helperText={errors?.lastName?.message}
+                    error={Boolean(error)}
+                    helperText={error?.message}
                     fullWidth
                   />
                 )}
               />
             </Grid>
             <Grid xs={12} item>
-              With email:
               <Controller
                 name={'withEmail'}
                 control={control}
@@ -65,25 +63,11 @@ const ReactHookFormExample = () => {
                 )}
               />
             </Grid>
-            <Grid xs={6} hidden={!withEmail} item>
-              <Controller
-                name={'email'}
-                control={control}
-                defaultValue={''}
-                render={({field}) => (
-                  <TextField
-                    {...field}
-                    label={'Email'}
-                    variant={'outlined'}
-                    error={Boolean(errors?.email)}
-                    helperText={errors?.email?.message}
-                    fullWidth
-                  />
-                )}
-              />
+            <Grid xs={12} item>
+              <EmailField control={control}/>
             </Grid>
             <Grid xs={12} item>
-              <Button onClick={handleSubmit(data => console.log(data))} variant={'outlined'}>Submit</Button>
+              <Button onClick={handleSubmit(data => alert(JSON.stringify(data)))} variant={'outlined'}>Submit</Button>
             </Grid>
           </Grid>
         </Box>

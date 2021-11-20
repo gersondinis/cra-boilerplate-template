@@ -17,13 +17,11 @@ export const ReactQueryExample = () => {
           isError={isError}
           isLoading={isLoading || createTodoMutation.isLoading}
         />
-        react-query example
         <ul>
           {data?.slice(-5).map(todo => (
             <li key={todo.id}>{todo.title}</li>
           ))}
         </ul>
-
         <button
           onClick={() => {
             createTodoMutation.mutate({
