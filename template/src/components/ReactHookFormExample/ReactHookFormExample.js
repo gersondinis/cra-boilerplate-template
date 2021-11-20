@@ -12,7 +12,7 @@ const ReactHookFormExample = () => {
 
   const withEmail = watch('withEmail');
 
-  return (  
+  return (
     <Card raised>
       <CardHeader title={'react-hook-form example'} subheader={'forms'}/>
       <CardContent>
