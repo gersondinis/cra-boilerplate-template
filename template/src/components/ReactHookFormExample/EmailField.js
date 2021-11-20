@@ -1,29 +1,34 @@
 import React from 'react';
 import {TextField} from '@mui/material';
-import {Controller, useWatch} from 'react-hook-form';
+import {Controller, useFormContext, useWatch} from 'react-hook-form';
 
-const EmailField = ({control}) => {
+let rerenders = 0;
+const EmailField = () => {
 
-  const withEmail = useWatch({control, name: 'withEmail'});
+  const {control} = useFormContext();
+  const withEmail = useWatch({name: 'withEmail'});
 
   if (!withEmail) return null;
 
   return (
-    <Controller
-      name={'email'}
-      control={control}
-      defaultValue={''}
-      render={({field, fieldState: {error}}) => (
-        <TextField
-          {...field}
-          label={'Email'}
-          variant={'outlined'}
-          error={Boolean(error)}
-          helperText={error?.message}
-          fullWidth
-        />
-      )}
-    />
+    <>
+      Email re-renders: {++rerenders}<br/>
+      <Controller
+        name={'email'}
+        control={control}
+        defaultValue={''}
+        render={({field, fieldState: {error}}) => (
+          <TextField
+            {...field}
+            label={'Email'}
+            variant={'outlined'}
+            error={Boolean(error)}
+            helperText={error?.message}
+            fullWidth
+          />
+        )}
+      />
+    </>
   );
 };
 
