@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {QueryClientProvider} from 'react-query';
-import {queryClient} from './api';
+import {queryClient} from './index';
 
 const ApiProvider = ({children}) => {
 

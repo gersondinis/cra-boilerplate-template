@@ -1,11 +1,11 @@
-import {useCreateTodo, useGetTodos} from '../../api/api';
+import {postApi} from '../../api';
 import QueryFeedback from '../common/QueryFeedback/QueryFeedback';
 import {Card, CardContent, CardHeader} from '@mui/material';
 import React from 'react';
 
 export const ReactQueryExample = () => {
-  const {data, error, isLoading, isError} = useGetTodos();
-  const createTodoMutation = useCreateTodo();
+  const {data, error, isLoading, isError} = postApi.useGetList();
+  const createTodoMutation = postApi.useCreate();
 
   return (
     <Card raised>
