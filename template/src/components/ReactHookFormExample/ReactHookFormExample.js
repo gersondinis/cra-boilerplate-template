@@ -4,6 +4,7 @@ import {FormProvider, useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import schema from './SchemaValidation';
 import FormExample from './FormExample';
+import ReactHookFormExampleSnippet from './ReactHookFormExampleSnippet';
 
 let rerenders = 0;
 const ReactHookFormExample = () => {
@@ -19,6 +20,7 @@ const ReactHookFormExample = () => {
           <FormExample/>
         </FormProvider>
       </CardContent>
+      <ReactHookFormExampleSnippet/>
     </Card>
   );
 };

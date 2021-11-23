@@ -2,6 +2,7 @@ import {postApi} from '../../api';
 import QueryFeedback from '../common/QueryFeedback/QueryFeedback';
 import {Card, CardContent, CardHeader} from '@mui/material';
 import React from 'react';
+import ReactQueryExampleSnippet from './ReactQueryExampleSnippet';
 
 export const ReactQueryExample = () => {
   const {data, error, isLoading, isError} = postApi.useGetList();
@@ -33,6 +34,7 @@ export const ReactQueryExample = () => {
           Add Todo
         </button>
       </CardContent>
+      <ReactQueryExampleSnippet/>
     </Card>
   )
 }

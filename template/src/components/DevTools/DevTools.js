@@ -33,6 +33,7 @@ import AllInclusiveIcon from '@mui/icons-material/AllInclusive';
 // import QrReader from "../QrReader/QrReader";
 import APP_SETTINGS from "../../config/settings";
 import SETTINGS from "../../config/settings";
+import {Help} from '@mui/icons-material';
 
 
 const DevTools = ({
@@ -188,15 +189,15 @@ const DevTools = ({
             <ListItemIcon>
               <AllInclusiveIcon/>
             </ListItemIcon>
-            <ListItemText primary={'Examples'}/>
+            <ListItemText primary={'Help'}/>
             <ListItemSecondaryAction>
               <IconButton
                 onClick={() => {
-                  navigateHandler('/examples');
+                  navigateHandler('/about');
                   onChange({open: false});
                 }}
                 size="large">
-                <KeyboardArrowRightIcon/>
+                <Help/>
               </IconButton>
             </ListItemSecondaryAction>
           </ListItem>

@@ -1,6 +1,7 @@
 {
     "name": "cra-template-grd",
     "version": "1.0.37",
+    "homepage": "https://cra-template-grd.web.app/",
     "keywords": [
         "react",
         "create-react-app",

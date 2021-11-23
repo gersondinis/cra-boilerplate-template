@@ -3,6 +3,7 @@ import {Box, Card, CardContent, CardHeader, IconButton} from '@mui/material';
 import {Add, Remove} from '@mui/icons-material';
 import {proxy, subscribe, useSnapshot} from 'valtio';
 import {subscribeKey} from 'valtio/utils';
+import ValtioExampleSnippet from './ValtioExampleSnippet';
 
 export const state = proxy({
   app: {
@@ -16,7 +17,9 @@ subscribe(state.app, () => console.log('subscribe', state.app.countA));
 subscribeKey(state.app, 'countB', () => console.log('subscribeKey', state.app.countB));
 
 const ValtioExample = () => {
+
   const {app: {countA, countB}} = useSnapshot(state);
+
   return (
     <Card raised>
       <CardHeader title={'valtio'} subheader={'state management'}/>
@@ -38,6 +41,7 @@ const ValtioExample = () => {
           <IconButton onClick={() => ++state.app.countB}><Add/></IconButton>
         </Box>
       </CardContent>
+      <ValtioExampleSnippet/>
     </Card>
   );
 };

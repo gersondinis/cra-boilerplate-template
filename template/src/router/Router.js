@@ -6,8 +6,8 @@ import ExamplesPage from '../scenes/ExamplesPage';
 export const Router = () => {
 
   const routes = {
-    '/': () => <HelpPage/>,
-    '/examples': () => <ExamplesPage/>,
+    '/': () => <ExamplesPage/>,
+    '/about': () => <HelpPage/>,
   };
 
   return useRoutes(routes) || <PageNotFound/>;
