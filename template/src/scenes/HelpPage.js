@@ -1,6 +1,5 @@
 import React from 'react';
-import {Box, Card, CardActions, CardContent, CardHeader, IconButton, Typography} from '@mui/material';
-import {t} from 'ttag';
+import {Box, Card, CardActions, CardContent, IconButton, Typography} from '@mui/material';
 import {navigate} from 'hookrouter';
 import {ArrowBack} from '@mui/icons-material';
 
