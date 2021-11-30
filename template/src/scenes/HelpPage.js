@@ -23,8 +23,7 @@ const HelpPage = () => {
             -`notistack` for notification alerts;<br />
             -`axios` for REST;<br/>
             -`react-hook-form` for Forms validation;<br/>
-            -`react-query` for Fetching and Caching;<br />
-            -`storybook` for components building.
+            -`react-query` for Fetching and Caching.
           </Typography>
         </CardContent>
       </Card>
