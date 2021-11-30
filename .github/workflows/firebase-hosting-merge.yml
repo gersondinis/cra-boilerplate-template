@@ -23,10 +23,6 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_DATE }}-${{ hashFiles('**/package.json') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_DATE }}-${{ hashFiles('**/package.json') }}
-            ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package.json') }}
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
 
       - name: Install Dependencies
         run: cd template/ && npm install
