@@ -1,9 +1,9 @@
-import * as Yup from 'yup';
+import * as yup from 'yup';
 // import {debounce} from '@grd/debouncer';
 
 
-export const schema = Yup.object().shape({
-  firstName: Yup
+export const schema = yup.object().shape({
+  firstName: yup
     .string().required(),
   /*//Very complex async validation
   .test(async (v, context) => { //This works as a chain workaround.
@@ -27,12 +27,16 @@ export const schema = Yup.object().shape({
     }
     return true;
   }),*/
-  lastName: Yup.string().required(),
-  withEmail: Yup.bool(),
-  email: Yup.string().when('withEmail', {
+  lastName: yup.string().required(),
+  withEmail: yup.bool(),
+  email: yup.string().when('withEmail', {
     is: true, // alternatively: (val) => val == true
-    then: Yup.string().email().required()
+    then: yup.string().email().required()
   })
 }).required();
+
+export const schema2 = yup.object().shape({
+  firstName: yup.string().required('Only first name is required')
+})
 
 export default schema;
