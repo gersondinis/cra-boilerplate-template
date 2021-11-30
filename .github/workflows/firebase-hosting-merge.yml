@@ -20,9 +20,9 @@ jobs:
           path: |
             ~/.npm
             template/node_modules
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ env.cache_date }}-${{ hashFiles('**/package.json') }}
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_DATE }}-${{ hashFiles('**/package.json') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-${{ env.cache_date }}-${{ hashFiles('**/package.json') }}
+            ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_DATE }}-${{ hashFiles('**/package.json') }}
             ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package.json') }}
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
