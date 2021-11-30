@@ -26,21 +26,12 @@
       "yup": "^0.32.9"
     },
     "devDependencies": {
-      "@storybook/addon-actions": "^6.3.8",
-      "@storybook/addon-essentials": "^6.3.8",
-      "@storybook/addon-links": "^6.3.8",
-      "@storybook/node-logger": "^6.3.8",
-      "@storybook/preset-create-react-app": "^3.2.0",
-      "@storybook/react": "^6.3.8",
       "@types/hookrouter": "^2.2.5",
       "@types/store": "^2.0.2",
       "concurrently": "^6.2.1",
       "env-cmd": "^10.1.0",
       "overmind-devtools": "^29.0.1",
       "ttag-cli": "^1.9.3"
-    },
-    "resolutions": {
-      "babel-loader": "8.1.0"
     },
     "scripts": {
       "start": "react-scripts start",
