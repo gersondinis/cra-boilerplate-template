@@ -11,24 +11,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-#      - name: Cache node modules
-#        uses: actions/cache@v2
-#        env:
-#          cache-name: cache-node-modules
-#        with:
-#          # npm cache files are stored in `~/.npm` on Linux/macOS
-#          path: |
-#            ~/.npm
-#            template/node_modules
-#          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_DATE }}-${{ hashFiles('**/package.json') }}
-#          restore-keys: |
-#            ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_DATE }}-${{ hashFiles('**/package.json') }}
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/macOS
+          path: |
+            ~/.npm
+            template/node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_DATE }}-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-${{ secrets.CACHE_DATE }}-${{ hashFiles('**/package.json') }}
 
       - name: Install Dependencies
-        run: cd template/ && npm install
+        run: cd template/ && yarn install
 
       - name: Build
-        run: cd template/ && npm run build-dev
+        run: cd template/ && yarn build-dev
 
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v0
