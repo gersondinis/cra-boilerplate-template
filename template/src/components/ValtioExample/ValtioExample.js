@@ -1,44 +1,27 @@
 import React from 'react';
 import {Box, Card, CardContent, CardHeader, IconButton} from '@mui/material';
 import {Add, Remove} from '@mui/icons-material';
-import {proxy, subscribe, useSnapshot} from 'valtio';
-import {subscribeKey} from 'valtio/utils';
+import {proxy, useSnapshot} from 'valtio';
 import ValtioExampleSnippet from './ValtioExampleSnippet';
 
 export const state = proxy({
-  app: {
-    countA: 0,
-    countB: 0,
-  }
+  count: 0,
 });
-
-subscribe(state.app, () => console.log('subscribe', state.app.countA));
-
-subscribeKey(state.app, 'countB', () => console.log('subscribeKey', state.app.countB));
 
 const ValtioExample = () => {
 
-  const {app: {countA, countB}} = useSnapshot(state);
+  const {count} = useSnapshot(state);
 
   return (
     <Card raised>
       <CardHeader title={'valtio'} subheader={'state management'}/>
       <CardContent>
-        CountA
         <Box sx={styles.container}>
-          <IconButton onClick={() => --state.app.countA}><Remove/></IconButton>
+          <IconButton onClick={() => --state.count}><Remove/></IconButton>
           <Box sx={styles.counter}>
-            {countA}
+            {count}
           </Box>
-          <IconButton onClick={() => ++state.app.countA}><Add/></IconButton>
-        </Box>
-        CountB
-        <Box sx={styles.container}>
-          <IconButton onClick={() => --state.app.countB}><Remove/></IconButton>
-          <Box sx={styles.counter}>
-            {countB}
-          </Box>
-          <IconButton onClick={() => ++state.app.countB}><Add/></IconButton>
+          <IconButton onClick={() => ++state.count}><Add/></IconButton>
         </Box>
       </CardContent>
       <ValtioExampleSnippet/>

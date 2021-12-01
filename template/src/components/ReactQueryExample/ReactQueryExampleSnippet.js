@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import {CardActions, CardContent, Collapse, IconButton, Typography} from '@mui/material';
 import {Code, CodeOff} from '@mui/icons-material';
-import {CopyBlock, zenburn} from 'react-code-blocks';
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
+
 
 const ReactQueryExampleSnippet = () => {
   const [expanded, setExpanded] = useState(false);
@@ -16,8 +17,8 @@ const ReactQueryExampleSnippet = () => {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography>Query:</Typography>
-          <CopyBlock
-            text={[
+          <SyntaxHighlighter language={'jsx'} showLineNumbers>
+            {[
               '// Create the query',
               'export const useGetList: () => useQuery(',
               '    [\'POST\', \'LIST\'],',
@@ -27,14 +28,10 @@ const ReactQueryExampleSnippet = () => {
               '// use it like this:',
               'const {data, error, isLoading, isError} = useGetList();',
             ].join('\n')}
-            language={'jsx'}
-            showLineNumbers
-            theme={zenburn}
-            codeBlock
-          />
+          </SyntaxHighlighter>
           <Typography>Mutation:</Typography>
-          <CopyBlock
-            text={[
+          <SyntaxHighlighter language={'jsx'} showLineNumbers>
+            {[
               '// Create the mutation',
               'export const useCreate: () => useMutation(',
               '    [\'POST\', \'CREATE\'],',
@@ -47,11 +44,7 @@ const ReactQueryExampleSnippet = () => {
               '',
               '<button onClick={() => mutate({title: \'New post\'})}>Create new</button>',
             ].join('\n')}
-            language={'jsx'}
-            showLineNumbers
-            theme={zenburn}
-            codeBlock
-          />
+          </SyntaxHighlighter>
         </CardContent>
       </Collapse>
     </>

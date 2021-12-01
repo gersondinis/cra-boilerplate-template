@@ -41,25 +41,12 @@
       "build-prod": "env-cmd -f .env.production yarn build",
       "test": "react-scripts test",
       "eject": "react-scripts eject",
-      "debug": "concurrently \"yarn start\" overmind-devtools",
       "i18n-compile": "yarn ttag update src/i18n/translations/pt.po src/ && npx ttag update src/i18n/translations/en.po src/ && npx ttag po2json src/i18n/translations/pt.po > src/i18n/translations/pt.po.json && npx ttag po2json src/i18n/translations/en.po > src/i18n/translations/en.po.json",
-      "i18n-init": "yarn ttag init en src/i18n/translations/en.po && npx ttag init pt src/i18n/translations/pt.po",
-      "storybook": "start-storybook -p 6006 -s public",
-      "build-storybook": "build-storybook -s public"
+      "i18n-init": "yarn ttag init en src/i18n/translations/en.po && npx ttag init pt src/i18n/translations/pt.po"
     },
     "eslintConfig": {
       "extends": [
         "react-app"
-      ],
-      "overrides": [
-        {
-          "files": [
-            "**/*.stories.*"
-          ],
-          "rules": {
-            "import/no-anonymous-default-export": "off"
-          }
-        }
       ]
     },
     "browserslist": {

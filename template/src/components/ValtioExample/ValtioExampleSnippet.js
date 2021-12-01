@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {CardActions, CardContent, Collapse, IconButton} from '@mui/material';
 import {Code, CodeOff} from '@mui/icons-material';
-import {CopyBlock, zenburn} from 'react-code-blocks';
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 
 const ValtioExampleSnippet = () => {
   const [expanded, setExpanded] = useState(false);
@@ -15,8 +15,8 @@ const ValtioExampleSnippet = () => {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <CopyBlock
-            text={[
+          <SyntaxHighlighter language={'jsx'} showLineNumbers>
+            {[
               '// Create the `Store` object',
               'export const store = proxy({count: 0});',
               '',
@@ -32,12 +32,7 @@ const ValtioExampleSnippet = () => {
               '  );',
               '}',
             ].join('\n')}
-            language={'jsx'}
-            showLineNumbers
-            theme={zenburn}
-            highlight={'1-2,5,8,10-12'}
-            codeBlock
-          />
+          </SyntaxHighlighter>
         </CardContent>
       </Collapse>
     </>

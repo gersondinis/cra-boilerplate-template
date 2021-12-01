@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {CopyBlock, zenburn} from 'react-code-blocks';
 import {CardActions, CardContent, Collapse, IconButton, Typography} from '@mui/material';
 import {Code, CodeOff} from '@mui/icons-material';
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 
 const ReactHookFormExampleSnippet = () => {
   const [expanded, setExpanded] = useState(false);
@@ -16,8 +16,8 @@ const ReactHookFormExampleSnippet = () => {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography>Provider:</Typography>
-          <CopyBlock
-            text={[
+          <SyntaxHighlighter language={'jsx'} showLineNumbers>
+            {
               "" +
               "const ReactHookFormExample = () => {\n" +
               "\n" +
@@ -31,17 +31,12 @@ const ReactHookFormExampleSnippet = () => {
               "        <FormProvider {...methods}>\n" +
               "          <FormExample/>\n" +
               "        </FormProvider>\n" +
-              "      </CardContent>",
-            ].join('\n')}
-            language={'jsx'}
-            showLineNumbers
-            theme={zenburn}
-            highlight={'3-5,10,12'}
-            codeBlock
-          />
+              "      </CardContent>"
+            }
+          </SyntaxHighlighter>
           <Typography>Schema:</Typography>
-          <CopyBlock
-            text={[
+          <SyntaxHighlighter language={'js'} showLineNumbers>
+            {
               "export const schema = Yup.object().shape({\n" +
               "  firstName: Yup\n" +
               "    .string().required(),\n" +
@@ -51,16 +46,12 @@ const ReactHookFormExampleSnippet = () => {
               "    is: true, // alternatively: (val) => val === true\n" +
               "    then: Yup.string().email().required()\n" +
               "  })\n" +
-              "}).required();",
-            ].join('\n')}
-            language={'jsx'}
-            showLineNumbers
-            theme={zenburn}
-            codeBlock
-          />
+              "}).required();"
+            }
+          </SyntaxHighlighter>
           <Typography>Form example:</Typography>
-          <CopyBlock
-            text={[
+          <SyntaxHighlighter language={'jsx'} showLineNumbers>
+            {
               "const FormExample = () => {\n" +
               "  const {control, handleSubmit} = useFormContext();\n" +
               "\n" +
@@ -120,17 +111,13 @@ const ReactHookFormExampleSnippet = () => {
               "      </Grid>\n" +
               "    </Box>\n" +
               "  );\n" +
-              "};",
-            ].join('\n')}
-            language={'jsx'}
-            showLineNumbers
-            theme={zenburn}
-            highlight={'2,8-9,10-22,25-39,42-49,52,55'}
-            codeBlock
-          />
+              "};"
+           }
+          </SyntaxHighlighter>
+
           <Typography>Email field:</Typography>
-          <CopyBlock
-            text={[
+          <SyntaxHighlighter language={'jsx'} showLineNumbers>
+            {
               "const EmailField = () => {\n" +
               "\n" +
               "  const {control} = useFormContext();\n" +
@@ -157,14 +144,9 @@ const ReactHookFormExampleSnippet = () => {
               "      />\n" +
               "    </>\n" +
               "  );\n" +
-              "};",
-            ].join('\n')}
-            language={'jsx'}
-            showLineNumbers
-            theme={zenburn}
-            highlight={'3-4,6,10-24'}
-            codeBlock
-          />
+              "};"
+            }
+          </SyntaxHighlighter>
         </CardContent>
       </Collapse>
     </>
