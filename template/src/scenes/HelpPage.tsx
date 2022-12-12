@@ -18,10 +18,10 @@ const HelpPage = () => {
           <Typography variant="body2">
             -`store` for cross-browser local storage;<br/>
             -`valtio` for state management;<br/>
-            -`hookrouter` for routing;<br/>
+            -`react-router` for routing;<br/>
             -`ttag` for internalization;<br/>
             -`material-ui v5` for theme/components library;<br />
-            -`notistack` for notification alerts;<br />
+            -`react-toastify` for notification alerts;<br />
             -`axios` for REST;<br/>
             -`react-hook-form` for Forms validation;<br/>
             -`react-query` for Fetching and Caching.
