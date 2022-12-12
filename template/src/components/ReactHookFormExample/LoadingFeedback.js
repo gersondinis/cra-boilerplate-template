@@ -1,6 +1,5 @@
-import React from 'react';
 import {useFormState} from 'react-hook-form';
-import LoadingScreen from '../common/LoadingScreen/LoadingScreen';
+import {LoadingScreen} from '../common/LoadingScreen/LoadingScreen';
 
 const LoadingFeedback = () => {
   const {isSubmitting} = useFormState();

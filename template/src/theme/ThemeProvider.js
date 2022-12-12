@@ -4,7 +4,7 @@ import themeData from './theme';
 
 export const theme = createTheme(themeData);
 
-const ThemeProvider = ({children}) => {
+export const ThemeProvider = ({children}) => {
 
   return (
     <MuiThemeProvider theme={theme}>
@@ -12,5 +12,3 @@ const ThemeProvider = ({children}) => {
     </MuiThemeProvider>
   );
 };
-
-export default ThemeProvider;

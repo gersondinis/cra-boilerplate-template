@@ -1,10 +1,10 @@
 import React from 'react';
 import DevTools from './DevTools';
-import {navigate} from 'hookrouter';
+import { useNavigate } from 'react-router-dom';
 import {useStore, actions} from '../../store';
 
-const DevToolsConnected = () => {
-
+export const DevToolsConnected = () => {
+  const navigate = useNavigate();
   const {app: {language, devTools: formData}} = useStore();
   const {app: {setLanguage, setAppDevToolsState}} = actions;
 
@@ -21,4 +21,3 @@ const DevToolsConnected = () => {
   );
 };
 
-export default DevToolsConnected;
