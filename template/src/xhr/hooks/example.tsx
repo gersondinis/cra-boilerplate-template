@@ -1,8 +1,8 @@
 import {useMutation, useQuery} from '@tanstack/react-query';
 import {toast} from 'react-toastify';
-import {parseErrorMessage} from '../../services/error/error.service';
-import {createPost, getPosts} from '../endpoints/example/example.endpoints';
-import {EndpointConfig} from '../utils/endpoint-config.type';
+import {parseErrorMessage} from 'services/error/error.service';
+import {createPost, getPosts} from 'xhr/endpoints/example/example.endpoints';
+import {EndpointConfig} from 'xhr/utils/endpoint-config.type';
 
 export const ENTITY_QUERY_TYPE = 'STORE';
 export const ENTITY_ENDPOINT = '/store';

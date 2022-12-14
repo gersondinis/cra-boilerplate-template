@@ -1,6 +1,6 @@
 import {Card, CardContent, CardHeader} from '@mui/material';
-import {useCreatePost, useGetPosts} from '../../xhr/hooks/example';
-import {LoadingScreen} from '../common/LoadingScreen/LoadingScreen';
+import {useCreatePost, useGetPosts} from 'xhr/hooks/example';
+import {LoadingScreen} from 'common/LoadingScreen/LoadingScreen';
 import {ReactQueryExampleSnippet} from './ReactQueryExampleSnippet';
 
 export const ReactQueryExample = () => {

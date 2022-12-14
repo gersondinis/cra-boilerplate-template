@@ -1,5 +1,5 @@
-import {LOCALE_DEFAULT} from '../i18n/i18n';
-import SETTINGS from '../config/settings';
+import {LOCALE_DEFAULT} from 'i18n/i18n';
+import SETTINGS from 'config/settings';
 
 export const initialState = {
   app: {

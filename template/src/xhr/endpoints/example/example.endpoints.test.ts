@@ -1,5 +1,5 @@
 
-import {axiosMock, testEndpoint} from '../../utils/endpoint.test-utils';
+import {axiosMock, testEndpoint} from 'xhr/utils/endpoint.test-utils';
 import {getPosts} from './example.endpoints';
 
 

@@ -1,7 +1,7 @@
-import ReactHookFormExample from '../components/ReactHookFormExample/ReactHookFormExample';
+import ReactHookFormExample from 'components/ReactHookFormExample/ReactHookFormExample';
 import {Grid} from '@mui/material';
-import {ReactQueryExample} from '../components/ReactQueryExample/ReactQueryExample';
-import ValtioExample from '../components/ValtioExample/ValtioExample';
+import {ReactQueryExample} from 'components/ReactQueryExample/ReactQueryExample';
+import ValtioExample from 'components/ValtioExample/ValtioExample';
 
 
 const ExamplesPage = () => {

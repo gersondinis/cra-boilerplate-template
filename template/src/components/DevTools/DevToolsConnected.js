@@ -1,6 +1,6 @@
 import DevTools from './DevTools';
 import { useNavigate } from 'react-router-dom';
-import {useStore, actions} from '../../store';
+import {useStore, actions} from 'store/index';
 
 export const DevToolsConnected = () => {
   const navigate = useNavigate();

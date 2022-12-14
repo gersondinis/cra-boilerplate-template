@@ -20,7 +20,7 @@ import {
   Typography
 } from '@mui/material';
 import BugReportIcon from '@mui/icons-material/BugReport';
-import LanguageDropdown from '../common/LanguageDropdown/LanguageDropdown';
+import LanguageDropdown from 'components/common/LanguageDropdown/LanguageDropdown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import MenuIcon from '@mui/icons-material/Menu';
 import HelpIcon from '@mui/icons-material/Help';
@@ -29,10 +29,8 @@ import CloudOffIcon from '@mui/icons-material/CloudOff';
 import LanguageIcon from '@mui/icons-material/Language';
 import BuildIcon from '@mui/icons-material/Build';
 import AllInclusiveIcon from '@mui/icons-material/AllInclusive';
-// import CropFreeIcon from '@mui/icons-material/CropFree';
-// import QrReader from "../QrReader/QrReader";
-import APP_SETTINGS from "../../config/settings";
-import SETTINGS from "../../config/settings";
+import APP_SETTINGS from "config/settings";
+import SETTINGS from "config/settings";
 import {Help} from '@mui/icons-material';
 
 

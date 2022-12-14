@@ -1,5 +1,5 @@
-import {changeLocale} from '../config/settings';
-import {LOCALE} from '../i18n/i18n';
+import {changeLocale} from 'config/settings';
+import {LOCALE} from 'i18n/i18n';
 import {IAppState} from './initial-state';
 import {store} from './store';
 
