@@ -1,4 +1,3 @@
-import React from 'react';
 import DevTools from './DevTools';
 import { useNavigate } from 'react-router-dom';
 import {useStore, actions} from '../../store';

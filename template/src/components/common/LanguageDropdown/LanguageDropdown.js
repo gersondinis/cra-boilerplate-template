@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import {FormControl, InputLabel, MenuItem, Select} from '@mui/material';
 import {t} from 'ttag';

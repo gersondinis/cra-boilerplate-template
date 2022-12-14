@@ -1,4 +1,3 @@
-import React from 'react';
 import {createTheme, ThemeProvider as MuiThemeProvider} from '@mui/material';
 import themeData from './theme';
 

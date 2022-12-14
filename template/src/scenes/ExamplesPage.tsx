@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactHookFormExample from '../components/ReactHookFormExample/ReactHookFormExample';
 import {Grid} from '@mui/material';
 import {ReactQueryExample} from '../components/ReactQueryExample/ReactQueryExample';

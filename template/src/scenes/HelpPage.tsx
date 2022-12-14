@@ -1,4 +1,3 @@
-import React from 'react';
 import {Box, Card, CardActions, CardContent, IconButton, Typography} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import {ArrowBack} from '@mui/icons-material';

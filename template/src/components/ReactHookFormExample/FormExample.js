@@ -1,4 +1,3 @@
-import React from 'react';
 import LoadingFeedback from './LoadingFeedback';
 import {Box, Button, FormControlLabel, Grid, Switch, TextField} from '@mui/material';
 import {Controller, useFormContext} from 'react-hook-form';

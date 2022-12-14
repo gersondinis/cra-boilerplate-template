@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {IconButton} from '@mui/material';
 import {DevTool} from '@hookform/devtools';
 import DeveloperMode from '@mui/icons-material/DeveloperMode';

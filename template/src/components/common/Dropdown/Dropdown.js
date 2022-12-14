@@ -1,4 +1,3 @@
-import React from 'react';
 import {FormControl, FormHelperText, InputLabel, Select} from '@mui/material';
 import PropTypes from 'prop-types';
 

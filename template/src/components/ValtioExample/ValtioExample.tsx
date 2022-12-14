@@ -1,4 +1,3 @@
-import React from 'react';
 import {Box, Card, CardContent, CardHeader, IconButton} from '@mui/material';
 import {Add, Remove} from '@mui/icons-material';
 import {proxy, useSnapshot} from 'valtio';
