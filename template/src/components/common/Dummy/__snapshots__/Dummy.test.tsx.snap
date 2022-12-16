@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dummy renders children as expected 1`] = `<div />`;
+
+exports[`Dummy renders children as expected 2`] = `
+<div>
+  children
+</div>
+`;

@@ -7,7 +7,7 @@ export const state = proxy({
   count: 0,
 });
 
-const ValtioExample = () => {
+export const ValtioExample = () => {
 
   const {count} = useSnapshot(state);
 
@@ -38,5 +38,3 @@ const styles = {
     padding: 1
   }
 }
-
-export default ValtioExample;

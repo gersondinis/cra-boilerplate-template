@@ -1,19 +1,18 @@
 import {APIClient} from './api-client';
-import axios, {AxiosResponse} from 'axios';
+import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
 export const axiosMock = new MockAdapter(APIClient);
 
-export const testEndpoint = (endpoint: (...args: any) => Promise<AxiosResponse<any>>) => {
+export const testEndpoint = (endpoint: (...args: any) => Promise<any>, mock: any = true) => {
   describe('Should be an endpoint', () => {
     afterEach(() => {
       axiosMock.reset();
     });
 
     it('should return server data', async () => {
-      const serverData = 'data';
-      axiosMock.onAny().replyOnce(200, serverData);
-      expect((await endpoint({})).data).toBe(serverData);
+      axiosMock.onAny().replyOnce(200, mock);
+      expect((await endpoint({}))).toBeTruthy();
     });
 
     it('should throw an error when a client error occurs', () => {
@@ -25,18 +24,17 @@ export const testEndpoint = (endpoint: (...args: any) => Promise<AxiosResponse<a
       const config = {params: {test: 'test'}};
       axiosMock.onAny().replyOnce((providedConfig) => {
         expect(providedConfig.params).toEqual(expect.objectContaining(config.params));
-        return [200, true];
+        return [200, mock];
       });
-      expect((await endpoint(config, config)).data).toBe(true);
+      expect((await endpoint(config, config))).toBeTruthy();
     });
 
     it('should be able to pass an alternative client', async () => {
       const client = axios.create();
       const clientMock = new MockAdapter(client);
       const config = {params: 'test', client};
-      const data = 'new-client-response-data';
-      clientMock.onAny().replyOnce(200, data);
-      expect((await endpoint(config, config)).data).toBe(data);
+      clientMock.onAny().replyOnce(200, mock);
+      expect((await endpoint(config, config))).toBeTruthy();
     });
   });
 };
