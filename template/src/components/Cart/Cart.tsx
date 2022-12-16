@@ -1,19 +1,16 @@
 import { ExpandLess, ExpandMore, RemoveShoppingCart, ShoppingCart } from '@mui/icons-material';
 import { Box, Button, Divider, IconButton, Menu, MenuItem, Stack, Typography, useMediaQuery } from '@mui/material';
 import {classes} from 'components/Cart/Cart.styles';
-import { LoadingScreen } from 'components/common/LoadingScreen/LoadingScreen';
 import CheckIcon from '@mui/icons-material/Check';
 import HourglassEmptyIcon from '@mui/icons-material/HourglassEmpty';
 import { useMemo, useState } from 'react';
 import { actions } from 'store/actions';
 import { useStore } from 'store/store';
-import { useCreateToDo } from 'xhr/hooks/api';
 
 export const Cart = () => {
   const isMobile = useMediaQuery((theme: any) => theme.breakpoints.down('sm'));
-  const { mutate, isLoading } = useCreateToDo();
   const [anchorEl, setAnchorEl] = useState<Element | undefined>(undefined);
-  const { toDos, userId } = useStore();
+  const { toDos } = useStore();
 
   const summary = useMemo(
     () => (
@@ -86,7 +83,6 @@ export const Cart = () => {
         <Divider />
         <MenuItem>{summary}</MenuItem>
       </Menu>
-      {(isLoading) && <LoadingScreen />}
     </Box>
   );
 };

@@ -13,11 +13,11 @@ describe('User endpoints', () => {
   });
 
   describe('getToDos', () => {
-    testEndpoint(getToDos, { products: [] });
+    testEndpoint(getToDos);
 
     it('should call the right server endpoint', async () => {
-      axiosMock.onGet('/todos').replyOnce(200, { products: [] });
-      expect(await getToDos()).toEqual([]);
+      axiosMock.onGet('/todos').replyOnce(200, true);
+      expect(await getToDos()).toBe(true);
     });
   });
 

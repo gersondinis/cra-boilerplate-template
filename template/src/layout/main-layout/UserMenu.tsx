@@ -31,7 +31,7 @@ export const UserMenu = () => {
           {!isMobile && (
             <Box display='flex' flexDirection='column' flexGrow='1' justifyContent='flex-start'>
               <Typography component='p' variant='body2' sx={classes.header} noWrap>
-                {user?.id}
+                {user?.name}
               </Typography>
               <Typography component='p' variant='caption' sx={classes.subheader} noWrap>
                 {user?.email}
@@ -64,7 +64,7 @@ export const UserMenu = () => {
           <MenuItem>
             <Stack>
               <Typography component='p' variant='body2' sx={classes.header} noWrap>
-                {user?.id}
+                {user?.name}
               </Typography>
               <Typography component='p' variant='caption' sx={classes.subheader} noWrap>
                 {user?.email}
