@@ -54,7 +54,7 @@
       "build-local": "env-cmd -f .env.development.local yarn build",
       "build-dev": "env-cmd -f .env.development yarn build",
       "build-prod": "env-cmd -f .env.production yarn build",
-      "test": "react-scripts test",
+      "test": "jest",
       "eject": "react-scripts eject",
       "i18n-compile": "yarn ttag update src/i18n/translations/pt.po src/ && npx ttag update src/i18n/translations/en.po src/ && npx ttag po2json src/i18n/translations/pt.po > src/i18n/translations/pt.po.json && npx ttag po2json src/i18n/translations/en.po > src/i18n/translations/en.po.json",
       "i18n-init": "yarn ttag init en src/i18n/translations/en.po && npx ttag init pt src/i18n/translations/pt.po"
