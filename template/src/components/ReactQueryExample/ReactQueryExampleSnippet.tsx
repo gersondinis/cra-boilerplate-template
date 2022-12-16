@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {CardActions, CardContent, Collapse, IconButton, Typography} from '@mui/material';
 import {Code, CodeOff} from '@mui/icons-material';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';

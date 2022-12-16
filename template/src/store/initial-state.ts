@@ -1,22 +1,15 @@
-import {LOCALE_DEFAULT} from '../i18n/i18n';
-import SETTINGS from '../config/settings';
+import {IUser} from 'types/domain/User.types';
+import storage from 'store';
+import {IToDo} from 'types/domain/ToDo.types';
 
 export const initialState = {
   app: {
-    language: LOCALE_DEFAULT,
     loading: false,
-    notifications: [],
-    devTools: {
-      open: false,
-      mode: SETTINGS.app.INITIAL_MODE,
-      debug: SETTINGS.app.DEBUG,
-    },
+    sidebarOpen: false,
   },
-  user: {
-    name: '',
-    roles: [] as string[],
-  },
-  count: 0,
+  userId: storage.get('userId') as IUser['id'] | undefined,
+  toDos: storage.get('toDos', []) as IToDo[],
+  count: 0
 };
 
 export type IAppState = typeof initialState;

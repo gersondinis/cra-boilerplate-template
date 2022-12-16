@@ -6,8 +6,6 @@ import ptLocale from 'date-fns/locale/pt-BR';
 
 export const LOCALE_KEY = 'LANG';
 
-
-
 export enum LOCALE {
   EN = 'en',
   PT = 'pt'

@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import {FC} from 'react';
 import {CircularProgress, Dialog, DialogContent} from '@mui/material';
 
 export const LoadingScreen: FC<ILoadingScreenProps> = ({loading = true, onClick = () => null}) => {
