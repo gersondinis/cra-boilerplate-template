@@ -1,3 +1,5 @@
+import type {Theme} from '@mui/material';
+
 export const classes = {
   wrapper: {
     borderBottomRightRadius: 0,
@@ -13,7 +15,7 @@ export const classes = {
     textAlign: 'left',
     textTransform: 'none',
     '& .MuiButton-startIcon': {
-      paddingRight: (theme: any) => theme.spacing(1) / 2,
+      paddingRight: (theme: Theme) => theme.spacing(1 / 2),
       '& .MuiSvgIcon-root': {
         fontSize: '2.1875rem'
       }
@@ -30,24 +32,24 @@ export const classes = {
     fontSize: '0.9375rem',
     maxWidth: '7.25rem',
     textTransform: 'none',
-    paddingRight: (theme: any) => theme.spacing(1 / 2),
-    color: (theme: any) => theme.palette.text.primary
+    paddingRight: (theme: Theme) => theme.spacing(1 / 2),
+    color: (theme: Theme) => theme.palette.text.primary
   },
   subheader: {
     lineHeight: 1,
     maxWidth: '7.25rem',
     textTransform: 'none',
     textAlign: 'left',
-    paddingRight: (theme: any) => theme.spacing(1 / 2),
-    color: (theme: any) => theme.palette.text.disabled
+    paddingRight: (theme: Theme) => theme.spacing(1 / 2),
+    color: (theme: Theme) => theme.palette.text.disabled
   },
   expandIcon: {
-    color: (theme: any) => theme.palette.primary.main
+    color: (theme: Theme) => theme.palette.primary.main
   },
   indicator: {
     maxHeight: '2.125rem',
     overflow: 'hidden',
-    paddingTop: (theme: any) => theme.spacing(1) / 2
+    paddingTop: (theme: Theme) => theme.spacing(1 / 2)
   },
   popover: {
     maxWidth: '14.7rem',

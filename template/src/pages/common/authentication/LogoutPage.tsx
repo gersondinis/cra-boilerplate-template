@@ -6,6 +6,7 @@ import {PUBLIC_URL} from 'services/env/environment.service';
 import {ROUTE} from 'types/routes.enum';
 import {useStore} from 'store/store';
 import {actions} from 'store/actions';
+import type {Theme} from '@mui/material';
 
 export const LogoutPage = () => {
   const navigate = useNavigate();
@@ -57,12 +58,12 @@ const classes = {
     height: '100%',
     justifyContent: 'center',
     minHeight: '100%',
-    padding: (theme: any) => theme.spacing(3),
-    paddingTop: (theme: any) => theme.spacing(10)
+    padding: (theme: Theme) => theme.spacing(3),
+    paddingTop: (theme: Theme) => theme.spacing(10)
   },
   caption: {
     justifyContent: 'flex-start',
-    marginTop: (theme: any) => theme.spacing(1),
+    marginTop: (theme: Theme) => theme.spacing(1),
     display: 'flex',
     width: '20rem'
   },

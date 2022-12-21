@@ -3,11 +3,12 @@ import {useMatch, useNavigate} from 'react-router-dom';
 import {ListItem, ListItemIcon, ListItemText, useMediaQuery} from '@mui/material';
 import {actions} from 'store/actions';
 import {FC} from 'react';
+import type {Theme} from '@mui/material';
 
 export const SidebarLink: FC<ISidebarLink> = ({path = '/', icon = <Home/>, text = 'Link', itemKey, exact = false}) => {
   const navigate = useNavigate();
   const matches = useMatch({path, end: exact});
-  const isDesktop = useMediaQuery((theme: any) => theme.breakpoints.up('lg'));
+  const isDesktop = useMediaQuery((theme: Theme) => theme.breakpoints.up('lg'));
 
   const clickHandler = () => {
     navigate(path);
@@ -26,21 +27,21 @@ export const SidebarLink: FC<ISidebarLink> = ({path = '/', icon = <Home/>, text 
 
 const styles = {
   icon: {
-    color: (theme: any) => theme.palette.secondary.contrastText,
+    color: (theme: Theme) => theme.palette.secondary.contrastText,
     minWidth: 'unset',
     width: '1.5rem',
-    marginRight: (theme: any) => theme.spacing(2),
+    marginRight: (theme: Theme) => theme.spacing(2),
     display: 'flex',
     justifyContent: 'center'
   },
   activeButton: {
-    backgroundColor: (theme: any) => theme.palette.secondary.light,
+    backgroundColor: (theme: Theme) => theme.palette.secondary.light,
     borderLeftWidth: '0.250rem',
     borderStyle: 'solid',
-    borderLeftColor: (theme: any) => theme.palette.primary.main,
-    paddingLeft: (theme: any) => theme.spacing(1) * 1.5,
+    borderLeftColor: (theme: Theme) => theme.palette.primary.main,
+    paddingLeft: (theme: Theme) => theme.spacing(1.5),
     '&:hover': {
-      backgroundColor: (theme: any) => theme.palette.secondary.light
+      backgroundColor: (theme: Theme) => theme.palette.secondary.light
     }
   },
 };

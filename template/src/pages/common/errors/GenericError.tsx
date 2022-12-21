@@ -3,6 +3,7 @@ import {FC, ReactNode} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {PUBLIC_URL} from 'services/env/environment.service';
 import {ROUTE} from 'types/routes.enum';
+import type {Theme} from '@mui/material';
 
 export const GenericError: FC<IGenericError> = ({title = 'Whoops...', description = '', imgSrc = `${PUBLIC_URL}/static/images/undraw_close_tab_uk6g.svg`, children}) => {
   const navigate = useNavigate();
@@ -40,11 +41,11 @@ export type IGenericError = {
 
 const classes = {
   root: {
-    backgroundColor: (theme: any) => theme.palette.background.dark,
+    backgroundColor: (theme: Theme) => theme.palette.background.default,
     minHeight: '100%',
     display: 'flex',
     alignItems: 'center',
-    padding: (theme: any) => theme.spacing(3),
+    padding: (theme: Theme) => theme.spacing(3),
     paddingTop: '80px',
     paddingBottom: '80px'
   },

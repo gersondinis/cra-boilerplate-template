@@ -6,9 +6,10 @@ import HourglassEmptyIcon from '@mui/icons-material/HourglassEmpty';
 import { useMemo, useState } from 'react';
 import { actions } from 'store/actions';
 import { useStore } from 'store/store';
+import type {Theme} from '@mui/material';
 
 export const Cart = () => {
-  const isMobile = useMediaQuery((theme: any) => theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
   const [anchorEl, setAnchorEl] = useState<Element | undefined>(undefined);
   const { toDos } = useStore();
 

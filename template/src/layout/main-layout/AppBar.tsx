@@ -6,9 +6,10 @@ import {APP_NAME} from 'services/env/environment.service';
 import {actions} from 'store/actions';
 import {ROUTE} from 'types/routes.enum';
 import {UserMenu} from './UserMenu';
+import type {Theme} from '@mui/material';
 
 export const AppBar = () => {
-  const isTablet = useMediaQuery((theme: any) => theme.breakpoints.down('md'));
+  const isTablet = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
   const navigate = useNavigate();
 
   return (
@@ -39,8 +40,8 @@ const classes = {
   root: {
     color: 'secondary.main',
     backgroundColor: 'common.white',
-    zIndex: (theme: any) => theme.zIndex.drawer + 1,
-    borderBottom: (theme: any) => `1px solid ${theme.palette.divider}`,
+    zIndex: (theme: Theme) => theme.zIndex.drawer + 1,
+    borderBottom: (theme: Theme) => `1px solid ${theme.palette.divider}`,
     height: '3.75rem'
   },
   image: {

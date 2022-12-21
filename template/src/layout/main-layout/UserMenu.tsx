@@ -7,10 +7,11 @@ import {useStore} from 'store/store';
 import {useGetUser} from 'xhr/hooks/api';
 import {LoadingScreen} from 'components/common/LoadingScreen/LoadingScreen';
 import {classes} from 'layout/main-layout/UserMenu.styles';
+import type {Theme} from '@mui/material';
 
 export const UserMenu = () => {
   const navigate = useNavigate();
-  const isMobile = useMediaQuery((theme: any) => theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
   const [anchorEl, setAnchorEl] = useState<Element | undefined>(undefined);
   const {userId} = useStore();
   const {data: user, isLoading} = useGetUser({id: userId!});
