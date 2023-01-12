@@ -1,8 +1,9 @@
 import {AxiosError, AxiosResponse} from 'axios';
 import {parseErrorMessage} from './error.service';
+import { vi } from 'vitest';
 
-const mockIsProductionValue = jest.fn();
-jest.mock('services/env/environment.service', () => ({
+const mockIsProductionValue = vi.fn();
+vi.mock('services/env/environment.service', () => ({
   get isProduction() {
     return mockIsProductionValue();
   },

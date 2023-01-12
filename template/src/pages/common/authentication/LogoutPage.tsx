@@ -31,7 +31,7 @@ export const LogoutPage = () => {
           component={'img'}
           alt='under development'
           sx={classes.image}
-          src={`${process.env.PUBLIC_URL}/static/images/undraw_close_tab_uk6g.svg`}
+          src={`${PUBLIC_URL}/static/images/undraw_close_tab_uk6g.svg`}
         />
       </Box>
       <Box mt={2} display='flex' justifyContent='flex-end' width='24rem'>
