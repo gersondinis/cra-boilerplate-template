@@ -1,26 +1,28 @@
-import {FC} from 'react';
+import {LoadingScreen} from 'components/common/LoadingScreen/LoadingScreen';
+import {FC, lazy, Suspense} from 'react';
 import {Navigate, Route, Routes} from 'react-router';
-import {Homepage} from 'pages/Homepage';
-import {AboutPage} from 'pages/AboutPage';
-import {NotFound} from 'pages/common/errors/NotFound';
-import {Forbidden} from 'pages/common/errors/Forbidden';
-import {Unauthorized} from 'pages/common/errors/Unauthorized';
-import {Page} from 'pages/common/page/Page';
-import {LoginPage} from 'pages/common/authentication/LoginPage';
-import {LogoutPage} from 'pages/common/authentication/LogoutPage';
 import {ROUTE} from 'types/routes.enum';
+
+const Page = lazy(() => import('pages/common/page/Page').then(m => ({ default: m.Page })));
+const Homepage = lazy(() => import('pages/Homepage').then(m => ({ default: m.Homepage })));
+const AboutPage = lazy(() => import('pages/AboutPage').then(m => ({ default: m.AboutPage })));
+const NotFound = lazy(() => import('pages/common/errors/NotFound').then(m => ({ default: m.NotFound })));
+const Forbidden = lazy(() => import('pages/common/errors/Forbidden').then(m => ({ default: m.Forbidden })));
+const Unauthorized = lazy(() => import('pages/common/errors/Unauthorized').then(m => ({ default: m.Unauthorized })));
+const LoginPage = lazy(() => import('pages/common/authentication/LoginPage').then(m => ({ default: m.LoginPage })));
+const LogoutPage = lazy(() => import('pages/common/authentication/LogoutPage').then(m => ({ default: m.LogoutPage })));
 
 
 export const App: FC = () => {
   return (
     <Routes>
-      <Route path={ROUTE.HOME} element={<Page><Homepage/></Page>} />
-      <Route path={ROUTE.ABOUT} element={<Page><AboutPage/></Page>} />
-      <Route path={ROUTE.UNAUTHORIZED} element={<Unauthorized/>} />
-      <Route path={ROUTE.FORBIDDEN} element={<Forbidden/>} />
-      <Route path={ROUTE.NOT_FOUND} element={<NotFound/>} />
-      <Route path={ROUTE.LOGIN} element={<LoginPage/>} />
-      <Route path={ROUTE.LOGOUT} element={<LogoutPage/>} />
+      <Route path={ROUTE.HOME} element={<Suspense fallback={<LoadingScreen/>}><Page><Homepage/></Page></Suspense>} />
+      <Route path={ROUTE.ABOUT} element={<Suspense fallback={<LoadingScreen/>}><Page><AboutPage/></Page></Suspense>} />
+      <Route path={ROUTE.UNAUTHORIZED} element={<Suspense fallback={<LoadingScreen/>}><Unauthorized/></Suspense>} />
+      <Route path={ROUTE.FORBIDDEN} element={<Suspense fallback={<LoadingScreen/>}><Forbidden/></Suspense>} />
+      <Route path={ROUTE.NOT_FOUND} element={<Suspense fallback={<LoadingScreen/>}><NotFound/></Suspense>} />
+      <Route path={ROUTE.LOGIN} element={<Suspense fallback={<LoadingScreen/>}><LoginPage/></Suspense>} />
+      <Route path={ROUTE.LOGOUT} element={<Suspense fallback={<LoadingScreen/>}><LogoutPage/></Suspense>} />
       <Route path={'*'} element={<Navigate to={ROUTE.HOME}/>} />
     </Routes>
   );
