@@ -1,6 +1,6 @@
 {
     "name": "cra-template-grd",
-    "version": "1.0.47",
+    "version": "1.0.50",
     "homepage": "https://cra-template-grd.web.app/",
     "keywords": [
         "react",
@@ -26,6 +26,19 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/gersondinis/cra-boilerplate-template.git"
+    },
+    "scripts": {
+        "start": "vite",
+        "build": "tsc && vite build",
+        "serve": "vite preview",
+        "build:local": "env-cmd -f .env.development.local yarn build",
+        "build:dev": "env-cmd -f .env.development yarn build",
+        "build:prod": "env-cmd -f .env.production yarn build",
+        "test": "vitest watch",
+        "test:no-watch": "vitest run",
+        "test:coverage": "vitest run --coverage",
+        "i18n-compile": "yarn ttag update src/i18n/translations/pt.po src/ && npx ttag update src/i18n/translations/en.po src/ && npx ttag po2json src/i18n/translations/pt.po > src/i18n/translations/pt.po.json && npx ttag po2json src/i18n/translations/en.po > src/i18n/translations/en.po.json",
+        "i18n-init": "yarn ttag init en src/i18n/translations/en.po && npx ttag init pt src/i18n/translations/pt.po"
     },
     "dependencies": {
         "@emotion/react": "^11.10.5",
@@ -76,19 +89,6 @@
         "vite-plugin-svgr": "^2.4.0",
         "vite-tsconfig-paths": "^4.0.3",
         "vitest": "^0.27.1"
-    },
-    "scripts": {
-        "start": "vite",
-        "build": "tsc && vite build",
-        "serve": "vite preview",
-        "build-local": "env-cmd -f .env.development.local yarn build",
-        "build-dev": "env-cmd -f .env.development yarn build",
-        "build-prod": "env-cmd -f .env.production yarn build",
-        "test": "vitest watch",
-        "test:no-watch": "vitest run",
-        "test:coverage": "vitest run --coverage",
-        "i18n-compile": "yarn ttag update src/i18n/translations/pt.po src/ && npx ttag update src/i18n/translations/en.po src/ && npx ttag po2json src/i18n/translations/pt.po > src/i18n/translations/pt.po.json && npx ttag po2json src/i18n/translations/en.po > src/i18n/translations/en.po.json",
-        "i18n-init": "yarn ttag init en src/i18n/translations/en.po && npx ttag init pt src/i18n/translations/pt.po"
     },
     "eslintConfig": {
         "extends": [
