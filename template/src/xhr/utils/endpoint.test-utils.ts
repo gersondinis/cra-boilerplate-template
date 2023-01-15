@@ -1,4 +1,4 @@
-import {APIClient} from './api-client';
+import {APIClient} from 'xhr/utils/api-client';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
