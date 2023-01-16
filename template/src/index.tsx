@@ -3,11 +3,12 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {initMocking} from 'xhr/utils/mock-utils';
 import { App } from './App';
 import { ReactQueryProvider } from './providers/ReactQueryProvider/ReactQueryProvider';
 import { ThemeProvider } from './theme/ThemeProvider';
 
-createRoot(document.getElementById('root') as HTMLElement).render(
+initMocking().then(() => createRoot(document.getElementById('root') as HTMLElement).render(
   <ThemeProvider>
     <ReactQueryProvider>
       <BrowserRouter>
@@ -18,4 +19,4 @@ createRoot(document.getElementById('root') as HTMLElement).render(
       </BrowserRouter>
     </ReactQueryProvider>
   </ThemeProvider>
-);
+));
