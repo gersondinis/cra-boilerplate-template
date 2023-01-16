@@ -5,4 +5,3 @@ export const APIClient = axios.create({
   baseURL: API_URL,
   timeout: 20000
 });
-
